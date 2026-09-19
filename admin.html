@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css" type="text/css"/>
+  </head>
+  <body>
+    <div id="wrapper_home_page">
+      <div id="title_home" style="min-width: 140px;">
+        <h4>Admin Panel</h4>
+      </div>
+
+      <div class="head_bar">
+        <div class="options">
+          <button type="button" onclick="location.href='homepage.html'">View Site</button>
+          <button type="button" onclick="location.href='menu.html'">Menu</button>
+          <button type="button" onclick="location.href='index.html'">Logout</button>
+        </div>
+      </div>
+
+      <div class="basket-container" style="max-width: 750px;">
+        <h3 class="menu-heading" style="margin-top: 0;">Add Menu Item</h3>
+        <form class="form-box" style="max-width: 100%; margin: 10px 0 25px 0;" onsubmit="addItem(event)">
+          <input type="text" id="item-name" placeholder="Item Name (e.g. Iced Latte)" required>
+          <input type="number" id="item-price" step="0.01" placeholder="Price (&pound;)" required>
+          <input type="text" id="item-desc" placeholder="Description" required>
+          <button type="submit">Add to Menu</button>
+        </form>
+
+        <h3 class="menu-heading">System Controls</h3>
+        <div class="basket-actions" style="justify-content: flex-start; margin-top: 15px;">
+          <button type="button" class="pay-btn" onclick="clearAllData()">Reset All Orders & Data</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function addItem(e) {
+        e.preventDefault();
+        const name = document.getElementById('item-name').value;
+        const price = parseFloat(document.getElementById('item-price').value);
+        const desc = document.getElementById('item-desc').value;
+
+        let customMenu = JSON.parse(localStorage.getItem('customMenuItems') || '[]');
+        customMenu.push({ name, price, desc });
+        localStorage.setItem('customMenuItems', JSON.stringify(customMenu));
+
+        alert(name + ' added to menu database!');
+        e.target.reset();
+      }
+
+      function clearAllData() {
+        if (confirm("Reset all stored basket and order data?")) {
+          localStorage.clear();
+          alert("All storage cleared.");
+        }
+      }
+    </script>
+  </body>
+</html>

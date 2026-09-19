@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+     <title>Login page</title>
+      <link rel="stylesheet" href="styles.css" type="text/css"/>
+  </head>
+  <body>
+
+    <div id="wrapper_login_page">
+    
+      <div id="title_register"> 
+        <h4>Login</h4>
+      </div>
+      
+      <form class="form-box">
+
+       <input 
+        type="text" 
+        placeholder="Name" 
+        oninput="this.value = this.value.replace(/[^a-zA-Z'\s-]/g, '').replace(/(^|\s)\S/g, l => l.toUpperCase())" 
+        required>
+
+        <input 
+        type="text" 
+        placeholder="Surname" 
+        oninput="this.value = this.value.replace(/[^a-zA-Z'\s-]/g, '').replace(/(^|\s)\S/g, l => l.toUpperCase())" 
+        required>
+
+        <input 
+        type="tel" 
+        placeholder="Phone Number" 
+        maxlength="13" 
+        oninput="
+        let v = this.value.replace(/\D/g, '');
+        if (v.length > 5) v = v.slice(0, 5) + ' ' + v.slice(5, 8) + ' ' + v.slice(8, 11);
+        else if (v.length > 5) v = v.slice(0, 5) + ' ' + v.slice(5);
+        this.value = v.trim();
+        " 
+        required>
+
+        <input 
+        type="email" 
+        placeholder="Email" 
+        onblur="if(this.value && !this.value.includes('@')) this.value += '@gmail.com'" 
+        required>
+
+       <button type="button" onclick="location.href='homepage.html'">Submit</button>
+
+      </form>
+
+    </div>
+
+  </body>
+
+</html>

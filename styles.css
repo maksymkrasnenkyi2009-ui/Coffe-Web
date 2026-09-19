@@ -1,0 +1,343 @@
+/* ========================
+   General & Reset
+======================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #d7c4b7;
+  font-family: Arial, sans-serif;
+}
+
+/* ========================
+   Login Page Style
+======================== */
+#wrapper_login_page {
+  width: min(90%, 500px);
+  min-height: 450px;
+  height: auto;
+  position: relative;
+  margin: 20px auto;
+  border: 5px solid #8c6d53;
+  background-color: #d7c4b7;
+  border-radius: 10px;
+}
+
+#title_register {
+  width: fit-content;
+  padding: 0 15px;
+  height: 30px;
+  position: relative;
+  margin: 10px auto 0 auto;
+  border: 5px solid #6f4e37;
+  font-size: 25px;
+  color: #fffaf0;
+  background-color: #8c6239;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(60, 40, 25, 0.35);
+  display: flex;
+  align-items: center;
+}
+
+.form-box {
+  margin: 30px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 90%;
+  max-width: 350px;
+  padding: 24px;
+  background: #f5ebe0;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(80, 50, 30, 0.3);
+}
+
+.form-box input,
+.form-box button {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #bda287;
+  font-size: 14px;
+  color: #3b2210;
+}
+
+.form-box button {
+  background: #8c5835;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+/* ========================
+   Home & Shared Layout
+======================== */
+#wrapper_home_page {
+  width: min(95%, 1000px);
+  min-height: 100vh;
+  height: auto;
+  position: relative;
+  margin: 0 auto;
+  border: 5px solid #8c6d53;
+  background-color: #d7c4b7;
+  padding-bottom: 30px;
+}
+
+#title_home {
+  width: fit-content;
+  padding: 0 15px;
+  height: 30px;
+  position: relative;
+  margin: 10px auto 0 auto;
+  border: 5px solid #6f4e37;
+  font-size: 25px;
+  color: #fffaf0;
+  background-color: #8c6239;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(60, 40, 25, 0.35);
+  display: flex;
+  align-items: center;
+}
+
+.head_bar {
+  width: 95%;
+  height: auto;
+  min-height: 60px;
+  position: relative;
+  margin: 10px auto 0 auto;
+  border: 5px solid #6f4e37;
+  background-color: #bda287;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(60, 40, 25, 0.35);
+  padding: 10px;
+}
+
+.head_bar .options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
+}
+
+.head_bar button {
+  background: #8c5835;
+  color: #ffffff;
+  border: 1px solid #bda287;
+  cursor: pointer;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin: 0;
+  flex: 1;
+  text-align: center;
+}
+
+#coffe_facts {
+  background-image: url('Coffe_fact_img.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 20px;
+}
+
+#coffe_facts h4,
+#coffe_facts p {
+  background: rgba(0, 0, 0, 0.336);
+  color: #ffffff !important;
+  padding: 10px 15px;
+  border-radius: 6px;
+  max-width: 500px;
+  margin: 0 auto 10px auto;
+}
+
+#map {
+  width: 95%;
+  height: 400px;
+  position: relative;
+  margin: 23px auto 0 auto;
+  border: 5px solid #6f4e37;
+  display: block;
+  border-radius: 10px;
+}
+
+/* ========================
+   Menu Page Style
+======================== */
+.menu-container {
+  width: 95%;
+  margin: 20px auto;
+}
+
+.menu-heading {
+  font-size: 22px;
+  color: #3b2210;
+  margin: 25px 0 15px 5px;
+  border-bottom: 2px solid #8c6d53;
+  padding-bottom: 5px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 15px;
+  width: 100%;
+}
+
+.menu-card {
+  background: #f5ebe0;
+  border: 2px solid #bda287;
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 10px rgba(80, 50, 30, 0.15);
+}
+
+.card-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.card-header h4 {
+  margin: 0;
+  font-size: 18px;
+  color: #3b2210;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 16px;
+  color: #6f4e37;
+}
+
+.description {
+  font-size: 13px;
+  line-height: 1.4;
+  color: #5a3e2b;
+  margin: 0 0 14px 0;
+  flex-grow: 1;
+}
+
+.order-btn {
+  background: #8c5835;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.order-btn:hover {
+  background: #6f4e37;
+}
+
+/* ========================
+   Basket Page Style
+======================== */
+.basket-container {
+  width: 95%;
+  max-width: 650px;
+  margin: 25px auto;
+  background: #f5ebe0;
+  border: 2px solid #bda287;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(80, 50, 30, 0.2);
+}
+
+.basket-list {
+  margin: 15px 0;
+  border-top: 2px solid #bda287;
+  border-bottom: 2px solid #bda287;
+  padding: 10px 0;
+}
+
+.basket-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  color: #3b2210;
+  font-size: 16px;
+}
+
+.empty-basket {
+  text-align: center;
+  color: #5a3e2b;
+  padding: 20px 0;
+  font-style: italic;
+}
+
+.basket-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15px;
+}
+
+.basket-total {
+  font-size: 20px;
+  color: #6f4e37;
+}
+
+.basket-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.pay-btn {
+  background: #8c5835;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.pay-btn:hover {
+  background: #6f4e37;
+}
+
+.site-footer {
+  margin-top: 30px;
+  padding: 15px 0 5px 0;
+  border-top: 1px dashed #8c6d53;
+  display: flex;
+  justify-content: center;
+}
+
+.admin-link-btn {
+  background: transparent;
+  border: 1px dashed #6f4e37;
+  color: #6f4e37;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.admin-link-btn:hover {
+  opacity: 1;
+  background: #f5ebe0;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="styles.css" type="text/css"/>
+  </head>
+  <body>
+    <div id="wrapper_home_page">
+      <div id="title_home">
+        <h4>Coffee Bean</h4>
+      </div>
+
+      <div class="head_bar">
+        <div class="options">
+          <button type="button" onclick="location.href='homepage.html'">Go Home</button>
+          <button type="button" onclick="location.href='menu.html'">Menu</button>
+          <button type="button" onclick="location.href='basket.html'">View Basket</button>
+          <button type="button" onclick="logout()">Logout</button>
+        </div>
+      </div>
+
+      <div class="basket-container">
+        <h3 class="menu-heading" style="margin-top: 0;">My Account</h3>
+        <p><strong>Name:</strong> <span id="u-name">Guest User</span></p>
+        <p><strong>Email:</strong> <span id="u-email">Not logged in</span></p>
+        
+        <h3 class="menu-heading">Recent Orders</h3>
+        <div id="order-history" class="basket-list">
+          <div class="empty-basket">No past orders yet.</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const user = JSON.parse(localStorage.getItem('currentUser') || '{}');
+      if (user.name) document.getElementById('u-name').textContent = user.name;
+      if (user.email) document.getElementById('u-email').textContent = user.email;
+
+      function logout() {
+        localStorage.removeItem('currentUser');
+        location.href = 'index.html';
+      }
+    </script>
+  </body>
+</html>

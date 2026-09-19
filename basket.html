@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basket</title>
+    <link rel="stylesheet" href="styles.css" type="text/css"/>
+  </head>
+  
+  <body>
+
+    <div id="wrapper_home_page">
+
+      <div id="title_home"> 
+        <h4>Coffee Bean</h4>
+      </div>
+
+      <div class="head_bar">
+        <div class="options">
+          <button type="button" onclick="location.href='menu.html'">Menu</button>
+          <button type="button" onclick="location.href='homepage.html'">Go Home</button>
+          <button type="button" onclick="location.href='index.html'">Login</button>
+          <button type="button" onclick="location.href='user.html'">Account</button>
+        </div>
+      </div>
+
+      <div class="basket-container">
+        <h3 class="menu-heading" style="margin-top: 0;">Your Basket</h3>
+        
+        <div id="basket-items" class="basket-list"></div>
+        
+        <div class="basket-footer">
+          <div id="total" class="basket-total"></div>
+          
+          <div class="basket-actions">
+            <button type="button" id="clear-btn" class="pay-btn" onclick="clearBasket()">Clear Basket</button>
+            <button type="button" id="pay-btn" class="pay-btn" onclick="location.href='pay.html'">Pay Now</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script>
+      function renderBasket() {
+        const items = JSON.parse(localStorage.getItem('basket') || '[]');
+        const list = document.getElementById('basket-items');
+        const totalEl = document.getElementById('total');
+        const payBtn = document.getElementById('pay-btn');
+        const clearBtn = document.getElementById('clear-btn');
+
+        if (items.length === 0) {
+          list.innerHTML = '<div class="empty-basket">Your basket is empty.</div>';
+          totalEl.innerHTML = '';
+          payBtn.style.display = 'none';
+          clearBtn.style.display = 'none';
+          return;
+        }
+
+        let total = 0;
+        list.innerHTML = '';
+        payBtn.style.display = 'inline-block';
+        clearBtn.style.display = 'inline-block';
+
+        items.forEach((item) => {
+          total += item.price;
+          list.innerHTML += `
+            <div class="basket-row">
+              <span class="item-name">${item.name}</span>
+              <span class="item-price">&pound;${item.price.toFixed(2)}</span>
+            </div>
+          `;
+        });
+
+        totalEl.innerHTML = `<strong>Total: &pound;${total.toFixed(2)}</strong>`;
+      }
+
+      function clearBasket() {
+        localStorage.removeItem('basket');
+        renderBasket();
+      }
+
+      renderBasket();
+    </script>
+  </body>
+
+</html>

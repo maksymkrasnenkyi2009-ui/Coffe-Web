@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="styles.css" type="text/css"/>
+  </head>
+  
+  <body>
+
+    <div id="wrapper_login_page">
+    
+      <div id="title_register" style="min-width: 100px;"> 
+        <h4 style="margin: 0;">Payment</h4>
+      </div>
+      
+      <form class="form-box" onsubmit="handlePayment(event)">
+
+        <input 
+          type="text" 
+          placeholder="Cardholder Name" 
+          oninput="this.value = this.value.replace(/[^a-zA-Z'\s-]/g, '').replace(/(^|\s)\S/g, l => l.toUpperCase())" 
+          required>
+
+        <input 
+          type="text" 
+          placeholder="Card Number" 
+          maxlength="19" 
+          oninput="
+            let v = this.value.replace(/\D/g, '').slice(0, 16);
+            this.value = v.match(/.{1,4}/g)?.join(' ') || '';
+          " 
+          required>
+
+        <div style="display: flex; gap: 10px;">
+          <input 
+            type="text" 
+            placeholder="MM/YY" 
+            maxlength="5" 
+            style="flex: 1;"
+            oninput="
+              let v = this.value.replace(/\D/g, '').slice(0, 4);
+              if (v.length >= 3) this.value = v.slice(0, 2) + '/' + v.slice(2);
+              else this.value = v;
+            " 
+            required>
+
+          <input 
+            type="password" 
+            placeholder="CVV" 
+            maxlength="3" 
+            style="flex: 1;"
+            oninput="this.value = this.value.replace(/\D/g, '')" 
+            required>
+        </div>
+
+        <button type="submit" id="pay-submit-btn">Pay Now</button>
+        <button type="button" onclick="location.href='basket.html'" style="background: #bda287; color: #3b2210;">Back to Basket</button>
+
+      </form>
+
+    </div>
+
+    <script>
+      const items = JSON.parse(localStorage.getItem('basket') || '[]');
+      const total = items.reduce((sum, item) => sum + item.price, 0);
+      const btn = document.getElementById('pay-submit-btn');
+
+      if (total > 0) {
+        btn.innerHTML = `Pay &pound;${total.toFixed(2)}`;
+      }
+
+      function handlePayment(e) {
+        e.preventDefault();
+        if (items.length === 0) {
+          alert('Your basket is empty!');
+          location.href = 'menu.html';
+          return;
+        }
+        alert('Payment successful! Your order has been placed.');
+        localStorage.removeItem('basket');
+        location.href = 'homepage.html';
+      }
+    </script>
+
+  </body>
+
+</html>

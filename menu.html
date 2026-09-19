@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="styles.css" type="text/css"/>
+  </head>
+  
+  <body>
+
+    <div id="wrapper_home_page">
+
+      <div id="title_home"> 
+        <h4>Coffee Bean</h4>
+      </div>
+
+      <div class="head_bar">
+        <div class="options">
+          <button type="button" onclick="location.href='homepage.html'">Go Home</button>
+          <button type="button" onclick="location.href='basket.html'">View Basket</button>
+          <button type="button" onclick="location.href='index.html'">Login</button>
+          <button type="button" onclick="location.href='user.html'">Account</button>
+        </div>
+      </div>
+
+      <div class="menu-container">
+        <!-- Coffee Section -->
+        <h3 class="menu-heading">Coffees</h3>
+        <div class="menu-grid">
+          <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=500&auto=format&fit=crop&q=60" alt="Espresso" class="card-img">
+            <div class="card-header">
+              <h4>Espresso</h4>
+              <span class="price">&pound;2.50</span>
+            </div>
+            <p class="description">A concentrated, full-bodied shot with rich crema and bold notes.</p>
+            <button type="button" class="order-btn" onclick="add('Espresso', 2.50)">Add to Basket</button>
+          </div>
+
+          <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=500&auto=format&fit=crop&q=60" alt="Americano" class="card-img">
+            <div class="card-header">
+              <h4>Americano</h4>
+              <span class="price">&pound;3.00</span>
+            </div>
+            <p class="description">Rich espresso pulled over hot water for a smooth, deep coffee finish.</p>
+            <button type="button" class="order-btn" onclick="add('Americano', 3.00)">Add to Basket</button>
+          </div>
+
+          <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=500&auto=format&fit=crop&q=60" alt="Latte" class="card-img">
+            <div class="card-header">
+              <h4>Latte</h4>
+              <span class="price">&pound;3.50</span>
+            </div>
+            <p class="description">Smooth espresso blended with steamed whole milk and light microfoam.</p>
+            <button type="button" class="order-btn" onclick="add('Latte', 3.50)">Add to Basket</button>
+          </div>
+
+          <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?w=500&auto=format&fit=crop&q=60" alt="Cappuccino" class="card-img">
+            <div class="card-header">
+              <h4>Cappuccino</h4>
+              <span class="price">&pound;3.50</span>
+            </div>
+            <p class="description">Equal parts espresso, velvety steamed milk, and thick foam dusted with cocoa.</p>
+            <button type="button" class="order-btn" onclick="add('Cappuccino', 3.50)">Add to Basket</button>
+          </div>
+
+          <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1577968897966-3d4325b36b61?w=500&auto=format&fit=crop&q=60" alt="Flat White" class="card-img">
+            <div class="card-header">
+              <h4>Flat White</h4>
+              <span class="price">&pound;3.40</span>
+            </div>
+            <p class="description">Double ristretto topped with thin velvety micro-foam milk.</p>
+            <button type="button" class="order-btn" onclick="add('Flat White', 3.40)">Add to Basket</button>
+          </div>
+
+          <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?w=500&auto=format&fit=crop&q=60" alt="Mocha" class="card-img">
+            <div class="card-header">
+              <h4>Mocha</h4>
+              <span class="price">&pound;3.80</span>
+            </div>
+            <p class="description">Espresso mixed with dark chocolate ganache, steamed milk, and light foam.</p>
+            <button type="button" class="order-btn" onclick="add('Mocha', 3.80)">Add to Basket</button>
+          </div>
+        </div>
+
+        <!-- Tea Section -->
+        <h3 class="menu-heading">Teas</h3>
+        <div class="menu-grid">
+          <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=500&auto=format&fit=crop&q=60" alt="English Breakfast Tea" class="card-img">
+            <div class="card-header">
+              <h4>English Breakfast</h4>
+              <span class="price">&pound;2.60</span>
+            </div>
+            <p class="description">Robust, traditional black tea blend suited perfectly with or without milk.</p>
+            <button type="button" class="order-btn" onclick="add('English Breakfast', 2.60)">Add to Basket</button>
+          </div>
+
+          <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?w=500&auto=format&fit=crop&q=60" alt="Earl Grey Tea" class="card-img">
+            <div class="card-header">
+              <h4>Earl Grey</h4>
+              <span class="price">&pound;2.80</span>
+            </div>
+            <p class="description">Fragrant black tea infused with natural Italian bergamot citrus oils.</p>
+            <button type="button" class="order-btn" onclick="add('Earl Grey', 2.80)">Add to Basket</button>
+          </div>
+
+          <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1627435601361-ec25f5b1d0e5?w=500&auto=format&fit=crop&q=60" alt="Green Tea" class="card-img">
+            <div class="card-header">
+              <h4>Green Tea</h4>
+              <span class="price">&pound;2.70</span>
+            </div>
+            <p class="description">Clean, delicately steamed sencha leaves with light grassy floral undertones.</p>
+            <button type="button" class="order-btn" onclick="add('Green Tea', 2.70)">Add to Basket</button>
+          </div>
+
+          <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=500&auto=format&fit=crop&q=60" alt="Peppermint Tea" class="card-img">
+            <div class="card-header">
+              <h4>Peppermint</h4>
+              <span class="price">&pound;2.60</span>
+            </div>
+            <p class="description">Naturally caffeine-free pure dried peppermint leaves with a crisp finish.</p>
+            <button type="button" class="order-btn" onclick="add('Peppermint', 2.60)">Add to Basket</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script>
+      function add(name, price) {
+        let items = JSON.parse(localStorage.getItem('basket') || '[]');
+        items.push({ name, price });
+        localStorage.setItem('basket', JSON.stringify(items));
+      }
+    </script>
+    <script>
+        function add(name, price) {
+            let items = JSON.parse(localStorage.getItem('basket') || '[]');
+            items.push({ name, price });
+            localStorage.setItem('basket', JSON.stringify(items));
+            alert(name + " added to basket!");
+        }
+    </script>
+  </body>
+
+</html>
